@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
   try { body = await request.json() }
   catch { return NextResponse.json({ error: 'invalid_json' }, { status: 400 }) }
 
-  const { cli_token, context } = body
+  const { cli_token, context, compiled_md } = body
   if (!cli_token || !context) {
     return NextResponse.json({ error: 'missing_fields' }, { status: 400 })
   }
@@ -67,10 +67,13 @@ export async function POST(request: NextRequest) {
   let projectId: string
 
   if (existing?.id) {
-    // Project exists — only update last_synced_at, NEVER rename
+    // Project exists — update last_synced_at and compiled_md, NEVER rename
     await supabase
       .from('projects')
-      .update({ last_synced_at: new Date().toISOString() })
+      .update({
+        last_synced_at: new Date().toISOString(),
+        compiled_md: compiled_md ?? null,
+      })
       .eq('id', existing.id)
     projectId = existing.id
   } else {
@@ -83,6 +86,7 @@ export async function POST(request: NextRequest) {
         git_remote: context.gitRemote ?? null,
         local_id: context.gitRemote ? null : lookupKey.value,
         last_synced_at: new Date().toISOString(),
+        compiled_md: compiled_md ?? null,
       })
       .select('id')
       .single()
