@@ -1,6 +1,7 @@
 'use client'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 import type { User } from '@supabase/supabase-js'
 import Link from 'next/link'
 
@@ -26,6 +27,28 @@ export default function DashboardClient({ user, isPro, projects }: Props) {
     await supabase.auth.signOut()
     router.push('/')
   }
+
+  // Realtime — auto-refresh dashboard when projects sync
+  useEffect(() => {
+    const supabase = createClient()
+    const channel = supabase
+      .channel('dashboard-realtime')
+      .on('postgres_changes', {
+        event: '*',
+        schema: 'public',
+        table: 'projects',
+        filter: `user_id=eq.${user.id}`,
+      }, () => router.refresh())
+      .on('postgres_changes', {
+        event: 'INSERT',
+        schema: 'public',
+        table: 'context_snapshots',
+        filter: `user_id=eq.${user.id}`,
+      }, () => router.refresh())
+      .subscribe()
+
+    return () => { supabase.removeChannel(channel) }
+  }, [user.id, router])
 
   function getStack(project: Project): string[] {
     const snap = project.context_snapshots?.[0]?.context
