@@ -68,7 +68,7 @@ export default function DashboardClient({ user, isPro, projects }: Props) {
           <div className="dash-upgrade-text">
             <strong>You&apos;re on the free plan.</strong> Upgrade to Pro to sync context across machines and see your projects here.
           </div>
-          <a href="https://buy.stripe.com/placeholder" className="dash-upgrade-btn">
+          <a href="/upgrade" className="dash-upgrade-btn">
             Upgrade to Pro — $5/month
           </a>
         </div>
