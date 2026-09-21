@@ -7,21 +7,21 @@ const TOOLS = ['Cursor', 'Claude Code', 'Windsurf', 'Aider', 'Goose', 'OpenCode'
 const STEPS = [
   {
     num: '01',
-    title: 'Install once',
-    desc: 'Install globally and run setup. A background daemon starts automatically on login.',
+    title: 'Install once per machine',
+    desc: 'One global install. One setup. A background daemon starts on login — auto-discovers every project you cd into.',
     code: 'npm install -g getprimer\nprimer setup',
   },
   {
     num: '02',
-    title: 'Open any project',
-    desc: 'cd into any git repo. The daemon detects it, reads your git history, and builds context automatically.',
-    code: 'cd my-project\n# AGENTS.md written automatically',
+    title: 'cd into any project',
+    desc: 'The daemon detects the git repo, reads your commit history, and writes context files instantly. No per-project config. Ever.',
+    code: 'cd my-project\n# AGENTS.md, .cursorrules, .windsurfrules\n# all written automatically',
   },
   {
     num: '03',
     title: 'Every agent knows',
-    desc: 'Cursor, Claude Code, Windsurf, Aider — they all read their native context file. No setup per tool.',
-    code: '# No config needed\n# Just open your IDE',
+    desc: 'Cursor, Claude Code, Windsurf, Aider, Goose — each reads its native file. Zero configuration across tools.',
+    code: '# Cursor reads .cursorrules\n# Claude reads AGENTS.md\n# Windsurf reads .windsurfrules\n# Just open your IDE',
   },
 ]
 
