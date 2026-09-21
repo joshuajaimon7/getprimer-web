@@ -93,7 +93,7 @@ export default function DashboardClient({ user, isPro, projects }: Props) {
           </p>
           <div className="projects-grid">
             {projects.map(p => (
-              <div key={p.id} className="project-card">
+              <Link key={p.id} href={`/dashboard/project/${p.id}`} className="project-card" style={{display:'block', textDecoration:'none', color:'inherit'}}>
                 <div className="project-name">{p.name}</div>
                 <div className="project-remote">{p.git_remote}</div>
                 {getStack(p).length > 0 && (
@@ -111,7 +111,7 @@ export default function DashboardClient({ user, isPro, projects }: Props) {
                   </div>
                 )}
                 <div className="project-meta">Last synced {formatDate(p.last_synced_at)}</div>
-              </div>
+              </Link>
             ))}
           </div>
         </>
