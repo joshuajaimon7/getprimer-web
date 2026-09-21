@@ -1,69 +1,180 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
+import Link from 'next/link'
+import { useState } from 'react'
+
+const TOOLS = ['Cursor', 'Claude Code', 'Windsurf', 'Aider', 'Goose', 'OpenCode']
+
+const STEPS = [
+  {
+    num: '01',
+    title: 'Install once',
+    desc: 'Install globally and run setup. A background daemon starts automatically on login.',
+    code: 'npm install -g getprimer\nprimer setup',
+  },
+  {
+    num: '02',
+    title: 'Open any project',
+    desc: 'cd into any git repo. The daemon detects it, reads your git history, and builds context automatically.',
+    code: 'cd my-project\n# AGENTS.md written automatically',
+  },
+  {
+    num: '03',
+    title: 'Every agent knows',
+    desc: 'Cursor, Claude Code, Windsurf, Aider — they all read their native context file. No setup per tool.',
+    code: '# No config needed\n# Just open your IDE',
+  },
+]
 
 export default function Home() {
+  const [copied, setCopied] = useState(false)
+
+  function copy() {
+    navigator.clipboard.writeText('npm install -g getprimer')
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* Nav */}
+      <nav className="nav">
+        <div className="nav-logo">primer<span>.</span></div>
+        <div className="nav-links">
+          <a className="nav-link" href="https://github.com/joshuajaimon7/primer" target="_blank" rel="noopener">GitHub</a>
+          <Link href="/login" className="nav-btn">Sign in</Link>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+      </nav>
+
+      {/* Hero */}
+      <section className="hero">
+        <div className="hero-badge">
+          <span className="hero-badge-dot" />
+          v3.0.1 now on npm
+        </div>
+        <h1 className="hero-h1">Your context<br />lives with you.</h1>
+        <p className="hero-sub">
+          Install once. Every AI agent knows your project —<br />
+          Cursor, Claude Code, Windsurf, Aider, Goose. Zero config.
+        </p>
+
+        <div>
+          <div className="install-box">
+            <span className="install-cmd">npm install -g getprimer</span>
+            <button className="install-copy" onClick={copy} title="Copy">
+              {copied ? (
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#4ade80" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              ) : (
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="8" height="8" rx="1.5" stroke="currentColor" strokeWidth="1.2"/><path d="M3 11V3.5A1.5 1.5 0 014.5 2H11" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
+              )}
+            </button>
+          </div>
+        </div>
+
+        <div className="hero-actions">
+          <Link href="/login" className="btn-primary">Get started free</Link>
+          <a href="https://github.com/joshuajaimon7/primer" target="_blank" rel="noopener" className="btn-ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            View on GitHub
           </a>
         </div>
-      </main>
-    </div>
-  );
+
+        <div className="tools-row">
+          {TOOLS.map(t => <span key={t} className="tool-item">{t}</span>)}
+        </div>
+      </section>
+
+      {/* Context preview */}
+      <section className="section">
+        <p className="section-label">What agents see</p>
+        <h2 className="section-title">Every agent reads this before your first message.</h2>
+        <div className="context-preview">
+          <div className="context-header">
+            <span className="context-dot" style={{background:'#ff5f57'}}/>
+            <span className="context-dot" style={{background:'#febc2e'}}/>
+            <span className="context-dot" style={{background:'#28c840'}}/>
+            <span className="context-filename">AGENTS.md</span>
+          </div>
+          <div className="context-body">
+            <div className="h1"># Project: creedn</div>
+            <div className="muted">{'>'} Auto-maintained by Primer v3.0.1. Last updated: 2m ago.</div>
+            <br/>
+            <div className="section-head">## Stack</div>
+            <div>Next.js 16 · TypeScript · Supabase · Stripe · Framer Motion</div>
+            <br/>
+            <div className="section-head">## Recent decisions & context</div>
+            <div className="decision">- ⚙️ Moved Stripe to server-side — client was exposing secret key <span className="muted">*(2026-09-21)*</span></div>
+            <div className="why">{'  >'} Why: Frontend code was reading STRIPE_SECRET_KEY directly.</div>
+            <div className="decision">- ⚙️ Switched to Vercel from Cloudflare Pages — bundle size limit exceeded <span className="muted">*(2026-09-19)*</span></div>
+            <div className="decision">- 📝 Auth handled in middleware — no per-route checks needed <span className="muted">*(2026-09-18)*</span></div>
+            <br/>
+            <div className="section-head">## Active files (last 7 days)</div>
+            <div className="hot">- `src/app/dashboard/deals/page.tsx` — 8 edits</div>
+            <div className="hot">- `src/app/api/stripe/webhook/route.ts` — 5 edits</div>
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="section">
+        <p className="section-label">How it works</p>
+        <h2 className="section-title">Three commands. Done forever.</h2>
+        <div className="steps">
+          {STEPS.map(s => (
+            <div key={s.num} className="step">
+              <div className="step-num">{s.num}</div>
+              <div className="step-title">{s.title}</div>
+              <div className="step-desc">{s.desc}</div>
+              <pre className="step-code">{s.code}</pre>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="section">
+        <p className="section-label">Pricing</p>
+        <h2 className="section-title">Free forever. Pro for cloud.</h2>
+        <div className="pricing-grid">
+          <div className="plan">
+            <div className="plan-name">Free</div>
+            <div className="plan-price">$0</div>
+            <div className="plan-desc">Always free. No account needed.</div>
+            <ul className="plan-features">
+              <li>Local daemon — unlimited projects</li>
+              <li>All IDE files generated</li>
+              <li>Git decision extraction</li>
+              <li>Auto-detection on cd</li>
+              <li>Works offline</li>
+            </ul>
+            <a href="https://www.npmjs.com/package/getprimer" className="plan-cta secondary" target="_blank">Install now</a>
+          </div>
+          <div className="plan featured">
+            <div className="plan-name">Pro</div>
+            <div className="plan-price">$5 <span>/ month</span></div>
+            <div className="plan-desc">Context travels with you across machines.</div>
+            <ul className="plan-features">
+              <li>Everything in Free</li>
+              <li>Cloud sync — context across machines</li>
+              <li>LLM extraction (WHY, not just WHAT)</li>
+              <li>Dashboard at getprimer.cloud</li>
+              <li>primer login to link devices</li>
+            </ul>
+            <Link href="/login" className="plan-cta primary">Get Pro</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer style={{borderTop: '1px solid var(--border)', marginTop: '40px'}}>
+        <div className="footer">
+          <div className="footer-logo">primer.</div>
+          <div className="footer-links">
+            <a href="https://github.com/joshuajaimon7/primer" className="footer-link" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.npmjs.com/package/getprimer" className="footer-link" target="_blank" rel="noopener">npm</a>
+            <Link href="/login" className="footer-link">Sign in</Link>
+          </div>
+        </div>
+      </footer>
+    </>
+  )
 }
