@@ -46,12 +46,22 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ ok: true, skipped: 'no_git_remote' })
   }
 
-  // Find existing project (by git_remote + user_id)
+  // Unique key: git_remote if present, else a machine+path hash (localId)
+  // This lets no-git projects sync too — they just won't merge across machines
+  const lookupKey = context.gitRemote
+    ? { column: 'git_remote', value: context.gitRemote }
+    : { column: 'local_id', value: context.localId ?? null }
+
+  if (!lookupKey.value) {
+    return NextResponse.json({ ok: true, skipped: 'no_identifier' })
+  }
+
+  // Find existing project
   const { data: existing } = await supabase
     .from('projects')
     .select('id')
     .eq('user_id', userId)
-    .eq('git_remote', context.gitRemote)
+    .eq(lookupKey.column, lookupKey.value)
     .single()
 
   let projectId: string
@@ -64,10 +74,16 @@ export async function POST(request: NextRequest) {
       .eq('id', existing.id)
     projectId = existing.id
   } else {
-    // New project — insert with name from context
+    // New project — insert with folder name from context
     const { data: inserted, error: insertErr } = await supabase
       .from('projects')
-      .insert({ user_id: userId, name: context.project, git_remote: context.gitRemote, last_synced_at: new Date().toISOString() })
+      .insert({
+        user_id: userId,
+        name: context.project,          // folder name — source of truth
+        git_remote: context.gitRemote ?? null,
+        local_id: context.gitRemote ? null : lookupKey.value,
+        last_synced_at: new Date().toISOString(),
+      })
       .select('id')
       .single()
 
