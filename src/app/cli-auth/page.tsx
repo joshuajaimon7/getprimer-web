@@ -75,7 +75,7 @@ function CliAuthContent() {
         <div className="auth-title" style={{fontSize:'1.25rem'}}>Sign in first</div>
         <p className="auth-subtitle">You need to be signed in to link your terminal.</p>
         <Link
-          href={`/login?redirect=/cli-auth?token=${token}`}
+          href={`/login?redirect=${encodeURIComponent(`/cli-auth?token=${token}`)}`}
           className="auth-submit"
           style={{display:'block', textAlign:'center', padding:'11px', borderRadius:'8px', fontWeight:600, fontSize:'0.9rem', background:'var(--text)', color:'#000', marginTop:'8px'}}
         >

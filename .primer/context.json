@@ -14,6 +14,24 @@
   ],
   "decisions": [
     {
+      "id": "ffcab901",
+      "text": "Cli-auth confirm — better errors, auto-redirect to dashboard after link",
+      "raw": "fix: cli-auth confirm — better errors, auto-redirect to dashboard after link",
+      "date": "2026-09-22T07:04:22.000Z",
+      "files": [
+        "._.goosehints",
+        "._.windsurfrules",
+        "._GEMINI.md",
+        ".cursorrules",
+        ".goosehints",
+        ".primer/context.json",
+        ".windsurfrules",
+        "GEMINI.md",
+        "src/app/cli-auth/page.tsx"
+      ],
+      "manual": false
+    },
+    {
       "id": "d9d0e07a",
       "text": "Brighten text colors, simplify MCP section with 3-step walkthrough",
       "raw": "fix: brighten text colors, simplify MCP section with 3-step walkthrough",
@@ -369,34 +387,34 @@
       "lastSaved": "2026-09-21T18:07:11.730Z"
     },
     {
-      "path": "src/app/globals.css",
-      "touches": 4,
-      "lastSaved": "2026-09-22T06:48:18.350Z"
-    },
-    {
       "path": ".cursorrules",
-      "touches": 3,
-      "lastSaved": "2026-09-22T07:04:00.820Z"
+      "touches": 4,
+      "lastSaved": "2026-09-22T07:04:23.850Z"
     },
     {
       "path": ".goosehints",
-      "touches": 3,
-      "lastSaved": "2026-09-22T07:04:00.840Z"
+      "touches": 4,
+      "lastSaved": "2026-09-22T07:04:23.860Z"
     },
     {
       "path": ".primer/context.json",
-      "touches": 3,
-      "lastSaved": "2026-09-22T07:04:00.770Z"
+      "touches": 4,
+      "lastSaved": "2026-09-22T07:04:23.840Z"
     },
     {
       "path": ".windsurfrules",
-      "touches": 3,
-      "lastSaved": "2026-09-22T07:04:00.830Z"
+      "touches": 4,
+      "lastSaved": "2026-09-22T07:04:23.850Z"
     },
     {
       "path": "GEMINI.md",
-      "touches": 3,
-      "lastSaved": "2026-09-22T07:04:00.840Z"
+      "touches": 4,
+      "lastSaved": "2026-09-22T07:04:23.860Z"
+    },
+    {
+      "path": "src/app/globals.css",
+      "touches": 4,
+      "lastSaved": "2026-09-22T06:48:18.350Z"
     },
     {
       "path": "src/app/login/page.tsx",
@@ -419,14 +437,14 @@
       "lastSaved": "2026-09-21T14:25:50.650Z"
     },
     {
+      "path": "src/app/cli-auth/page.tsx",
+      "touches": 2,
+      "lastSaved": "2026-09-22T07:19:34.800Z"
+    },
+    {
       "path": "src/app/auth/callback/route.ts",
       "touches": 2,
       "lastSaved": "2026-09-21T15:42:55.130Z"
-    },
-    {
-      "path": ".gitignore",
-      "touches": 2,
-      "lastSaved": "2026-09-21T14:06:19.510Z"
     }
   ],
   "architecture": [
@@ -441,7 +459,7 @@
     "hasDocs": false,
     "pendingTodos": []
   },
-  "builtAt": "2026-09-22T07:04:15.163Z",
-  "builtAtGitHead": "d9d0e07a62c6a4f15286328dcac59f2576e05989",
+  "builtAt": "2026-09-22T07:19:37.641Z",
+  "builtAtGitHead": "ffcab901745cfebded415c054f39a80564f44256",
   "primerVersion": "3.0.0"
 }
