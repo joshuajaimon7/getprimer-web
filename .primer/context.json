@@ -14,6 +14,39 @@
   ],
   "decisions": [
     {
+      "id": "0f37fca0",
+      "text": "Remove GitHub links from landing page (hero, nav, footer)",
+      "raw": "fix: remove GitHub links from landing page (hero, nav, footer)",
+      "date": "2026-09-22T06:44:00.000Z",
+      "files": [
+        "src/app/page.tsx"
+      ],
+      "manual": false
+    },
+    {
+      "id": "201fd9c7",
+      "text": "Add MCP connect section to Pro dashboard with IDE tabs + copy button",
+      "raw": "feat: add MCP connect section to Pro dashboard with IDE tabs + copy button",
+      "date": "2026-09-22T06:42:47.000Z",
+      "files": [
+        "._.cursorrules",
+        "._.goosehints",
+        "._.primer",
+        "._.windsurfrules",
+        "._GEMINI.md",
+        ".cursorrules",
+        ".goosehints",
+        ".primer/._context.json",
+        ".primer/context.json",
+        ".windsurfrules",
+        "GEMINI.md",
+        "src/app/api/._pull",
+        "src/app/api/pull/._route.ts",
+        "src/app/dashboard/dashboard-client.tsx"
+      ],
+      "manual": false
+    },
+    {
       "id": "f6734260",
       "text": "Add MCP server as Pro feature on landing page",
       "raw": "feat: add MCP server as Pro feature on landing page",
@@ -284,18 +317,18 @@
   "hotFiles": [
     {
       "path": "src/app/page.tsx",
-      "touches": 6,
-      "lastSaved": "2026-09-22T06:27:40.760Z"
+      "touches": 7,
+      "lastSaved": "2026-09-22T06:43:52.550Z"
+    },
+    {
+      "path": "src/app/dashboard/dashboard-client.tsx",
+      "touches": 5,
+      "lastSaved": "2026-09-22T06:42:24.710Z"
     },
     {
       "path": "src/app/api/sync/route.ts",
       "touches": 5,
       "lastSaved": "2026-09-21T18:07:11.730Z"
-    },
-    {
-      "path": "src/app/dashboard/dashboard-client.tsx",
-      "touches": 4,
-      "lastSaved": "2026-09-22T06:42:24.710Z"
     },
     {
       "path": "src/app/globals.css",
@@ -325,7 +358,7 @@
     {
       "path": "src/app/login/page.tsx",
       "touches": 2,
-      "lastSaved": "2026-09-21T15:18:04.250Z"
+      "lastSaved": "2026-09-22T06:45:34.610Z"
     },
     {
       "path": ".gitignore",
@@ -333,19 +366,24 @@
       "lastSaved": "2026-09-21T14:06:19.510Z"
     },
     {
-      "path": "src/app/api/pull/route.ts",
+      "path": ".cursorrules",
       "touches": 1,
-      "lastSaved": "2026-09-21T18:07:23.270Z"
+      "lastSaved": "2026-09-22T06:45:56.540Z"
     },
     {
-      "path": "src/app/dashboard/project/[id]/page.tsx",
+      "path": ".goosehints",
       "touches": 1,
-      "lastSaved": "2026-09-21T16:18:05.770Z"
+      "lastSaved": "2026-09-22T06:45:56.580Z"
     },
     {
-      "path": "public/favicon.svg",
+      "path": ".primer/context.json",
       "touches": 1,
-      "lastSaved": "2026-09-21T15:17:22.280Z"
+      "lastSaved": "2026-09-22T06:45:56.520Z"
+    },
+    {
+      "path": ".windsurfrules",
+      "touches": 1,
+      "lastSaved": "2026-09-22T06:45:56.560Z"
     }
   ],
   "architecture": [
@@ -360,7 +398,7 @@
     "hasDocs": false,
     "pendingTodos": []
   },
-  "builtAt": "2026-09-22T06:42:27.572Z",
-  "builtAtGitHead": "f67342600754ea9c04933644c8392ef52fefd787",
+  "builtAt": "2026-09-22T06:45:56.586Z",
+  "builtAtGitHead": "0f37fca0f466f39c97c56de7fb6c3f156ebe3e64",
   "primerVersion": "3.0.0"
 }

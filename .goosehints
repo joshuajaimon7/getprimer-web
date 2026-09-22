@@ -11,6 +11,8 @@ TypeScript · Supabase SSR · Supabase · Next.js 16 · React · React DOM · St
 - Next.js App Router
 
 ## Recent decisions & context
+- ⚙️ Remove GitHub links from landing page (hero, nav, footer) *(2026-09-22)*
+- ⚙️ Add MCP connect section to Pro dashboard with IDE tabs + copy button *(2026-09-22)*
 - ⚙️ Add MCP server as Pro feature on landing page *(2026-09-22)*
 - ⚙️ Landing page audit — remove creedn ref, update version, non-technical copy *(2026-09-22)*
 - ⚙️ Add pull API + store compiled_md in sync for cross-machine context *(2026-09-21)*
@@ -19,8 +21,6 @@ TypeScript · Supabase SSR · Supabase · Next.js 16 · React · React DOM · St
 - ⚙️ Project detail page + clickable cards + fix /api/sync build error *(2026-09-21)*
 - ⚙️ /api/sync route — CLI token auth, service role writes *(2026-09-21)*
 - ⚙️ Dashboard upgrade button → /upgrade (was buy.stripe.com/placeholder) *(2026-09-21)*
-- ⚙️ Design: premium minimal redesign *(2026-09-21)*
-- ⚙️ Auth callback uses NEXT_PUBLIC_APP_URL, handles next param *(2026-09-21)*
 
 ## Project health
 - Tests: ❌ none found
@@ -28,15 +28,15 @@ TypeScript · Supabase SSR · Supabase · Next.js 16 · React · React DOM · St
 - Auth: ✅
 
 ## Active files (last 7 days)
-- `src/app/page.tsx` — last saved 14m ago, 6 edits
+- `src/app/page.tsx` — last saved 2m ago, 7 edits
+- `src/app/dashboard/dashboard-client.tsx` — last saved 3m ago, 5 edits
 - `src/app/api/sync/route.ts` — last saved 12h ago, 5 edits
-- `src/app/dashboard/dashboard-client.tsx` — last saved just now, 4 edits
 - `src/app/globals.css` — last saved 14h ago, 3 edits
 - `src/app/layout.tsx` — last saved 15h ago, 3 edits
 - `package-lock.json` — last saved 16h ago, 3 edits
 - `package.json` — last saved 16h ago, 3 edits
-- `src/app/auth/callback/route.ts` — last saved 14h ago, 2 edits
-- `src/app/login/page.tsx` — last saved 15h ago, 2 edits
+- `src/app/auth/callback/route.ts` — last saved 15h ago, 2 edits
+- `src/app/login/page.tsx` — last saved just now, 2 edits
 - `.gitignore` — last saved 16h ago, 2 edits
 
 ## Repository
