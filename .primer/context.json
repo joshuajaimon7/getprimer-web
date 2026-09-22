@@ -14,6 +14,22 @@
   ],
   "decisions": [
     {
+      "id": "d9d0e07a",
+      "text": "Brighten text colors, simplify MCP section with 3-step walkthrough",
+      "raw": "fix: brighten text colors, simplify MCP section with 3-step walkthrough",
+      "date": "2026-09-22T06:49:09.000Z",
+      "files": [
+        ".cursorrules",
+        ".goosehints",
+        ".primer/context.json",
+        ".windsurfrules",
+        "GEMINI.md",
+        "src/app/dashboard/dashboard-client.tsx",
+        "src/app/globals.css"
+      ],
+      "manual": false
+    },
+    {
       "id": "771606b6",
       "text": "Redirect to dashboard if already logged in on /login",
       "raw": "fix: redirect to dashboard if already logged in on /login",
@@ -344,7 +360,7 @@
     },
     {
       "path": "src/app/dashboard/dashboard-client.tsx",
-      "touches": 5,
+      "touches": 6,
       "lastSaved": "2026-09-22T06:48:50.710Z"
     },
     {
@@ -353,14 +369,39 @@
       "lastSaved": "2026-09-21T18:07:11.730Z"
     },
     {
+      "path": "src/app/globals.css",
+      "touches": 4,
+      "lastSaved": "2026-09-22T06:48:18.350Z"
+    },
+    {
+      "path": ".cursorrules",
+      "touches": 3,
+      "lastSaved": "2026-09-22T07:04:00.820Z"
+    },
+    {
+      "path": ".goosehints",
+      "touches": 3,
+      "lastSaved": "2026-09-22T07:04:00.840Z"
+    },
+    {
+      "path": ".primer/context.json",
+      "touches": 3,
+      "lastSaved": "2026-09-22T07:04:00.770Z"
+    },
+    {
+      "path": ".windsurfrules",
+      "touches": 3,
+      "lastSaved": "2026-09-22T07:04:00.830Z"
+    },
+    {
+      "path": "GEMINI.md",
+      "touches": 3,
+      "lastSaved": "2026-09-22T07:04:00.840Z"
+    },
+    {
       "path": "src/app/login/page.tsx",
       "touches": 3,
       "lastSaved": "2026-09-22T06:45:34.610Z"
-    },
-    {
-      "path": "src/app/globals.css",
-      "touches": 3,
-      "lastSaved": "2026-09-22T06:48:18.350Z"
     },
     {
       "path": "src/app/layout.tsx",
@@ -376,31 +417,6 @@
       "path": "package.json",
       "touches": 3,
       "lastSaved": "2026-09-21T14:25:50.650Z"
-    },
-    {
-      "path": ".cursorrules",
-      "touches": 2,
-      "lastSaved": "2026-09-22T06:48:53.460Z"
-    },
-    {
-      "path": ".goosehints",
-      "touches": 2,
-      "lastSaved": "2026-09-22T06:48:53.480Z"
-    },
-    {
-      "path": ".primer/context.json",
-      "touches": 2,
-      "lastSaved": "2026-09-22T06:48:53.450Z"
-    },
-    {
-      "path": ".windsurfrules",
-      "touches": 2,
-      "lastSaved": "2026-09-22T06:48:53.460Z"
-    },
-    {
-      "path": "GEMINI.md",
-      "touches": 2,
-      "lastSaved": "2026-09-22T06:48:21.180Z"
     },
     {
       "path": "src/app/auth/callback/route.ts",
@@ -425,7 +441,7 @@
     "hasDocs": false,
     "pendingTodos": []
   },
-  "builtAt": "2026-09-22T06:48:53.521Z",
-  "builtAtGitHead": "771606b6ff84f55401f1f9c17054b6ccb2454941",
+  "builtAt": "2026-09-22T07:04:15.163Z",
+  "builtAtGitHead": "d9d0e07a62c6a4f15286328dcac59f2576e05989",
   "primerVersion": "3.0.0"
 }

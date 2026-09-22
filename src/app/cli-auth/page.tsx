@@ -27,15 +27,26 @@ function CliAuthContent() {
   async function confirm() {
     if (!token) return
     setConfirming(true)
-    const res = await fetch('/api/cli-auth/confirm', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token }),
-    })
-    const data = await res.json()
-    setConfirming(false)
-    if (data.ok) setDone(true)
-    else setError(data.error ?? 'Something went wrong')
+    setError('')
+    try {
+      const res = await fetch('/api/cli-auth/confirm', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token }),
+      })
+      const data = await res.json()
+      if (data.ok) {
+        setDone(true)
+        // Redirect to dashboard after 2s
+        setTimeout(() => router.push('/dashboard'), 2000)
+      } else {
+        setError(data.error ?? `Error ${res.status} — try running primer login again`)
+      }
+    } catch {
+      setError('Network error — check your connection and try again')
+    } finally {
+      setConfirming(false)
+    }
   }
 
   if (!token) return (
@@ -93,7 +104,10 @@ function CliAuthContent() {
         <div className="auth-title" style={{fontSize:'1.25rem', color:'#4ade80'}}>Machine linked!</div>
         <p className="auth-subtitle">
           Your terminal is now linked to <strong>{user.email}</strong>.<br/>
-          You can close this tab — your context will start syncing.
+          Your context will start syncing automatically.
+        </p>
+        <p style={{fontSize:'0.75rem', color:'var(--text-3)', marginTop:'12px'}}>
+          Redirecting to dashboard…
         </p>
       </div>
     </div>
