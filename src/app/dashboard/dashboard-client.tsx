@@ -19,65 +19,20 @@ interface Props {
   projects: Project[]
 }
 
-const MCP_CONFIGS: Record<string, { label: string; config: string; file: string }> = {
-  cursor: {
-    label: 'Cursor',
-    file: '~/.cursor/mcp.json',
-    config: `{
+const MCP_CONFIG = `{
   "mcpServers": {
     "primer": {
       "command": "primer",
       "args": ["mcp"]
     }
   }
-}`,
-  },
-  claude: {
-    label: 'Claude Code',
-    file: '~/.claude.json',
-    config: `{
-  "mcpServers": {
-    "primer": {
-      "command": "primer",
-      "args": ["mcp"]
-    }
-  }
-}`,
-  },
-  windsurf: {
-    label: 'Windsurf',
-    file: '~/.codeium/windsurf/mcp_config.json',
-    config: `{
-  "mcpServers": {
-    "primer": {
-      "command": "primer",
-      "args": ["mcp"]
-    }
-  }
-}`,
-  },
-  antigravity: {
-    label: 'Antigravity',
-    file: '~/.gemini/config/mcp_config.json',
-    config: `{
-  "mcpServers": {
-    "primer": {
-      "command": "primer",
-      "args": ["mcp"]
-    }
-  }
-}`,
-  },
-}
+}`
 
 function MCPSection() {
-  const [activeIde, setActiveIde] = useState<string>('cursor')
   const [copied, setCopied] = useState(false)
 
-  const selected = MCP_CONFIGS[activeIde]
-
   function copy() {
-    navigator.clipboard.writeText(selected.config)
+    navigator.clipboard.writeText(MCP_CONFIG)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
@@ -88,56 +43,40 @@ function MCPSection() {
         <span style={{ fontSize: '1rem', fontWeight: 600 }}>🔌 Connect MCP</span>
         <span style={{ fontSize: '0.72rem', color: 'var(--green)', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '4px', padding: '2px 8px' }}>Pro</span>
       </div>
-      <p style={{ fontSize: '0.8rem', color: 'var(--text-3)', marginBottom: '20px', lineHeight: 1.6 }}>
+      <p style={{ fontSize: '0.85rem', color: 'var(--text-2)', marginBottom: '24px', lineHeight: 1.6 }}>
         Give your IDE agents a live connection to Primer — query context, log decisions, and more mid-conversation.
       </p>
 
-      {/* IDE tabs */}
-      <div style={{ display: 'flex', gap: '6px', marginBottom: '12px', flexWrap: 'wrap' }}>
-        {Object.entries(MCP_CONFIGS).map(([key, ide]) => (
-          <button
-            key={key}
-            onClick={() => setActiveIde(key)}
-            style={{
-              padding: '5px 14px',
-              fontSize: '0.75rem',
-              borderRadius: '6px',
-              border: activeIde === key ? '1px solid var(--green)' : '1px solid var(--border)',
-              background: activeIde === key ? 'rgba(74,222,128,0.08)' : 'transparent',
-              color: activeIde === key ? 'var(--green)' : 'var(--text-2)',
-              cursor: 'pointer',
-              transition: 'all 0.15s',
-            }}
-          >
-            {ide.label}
-          </button>
+      {/* Steps */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '20px' }}>
+        {[
+          { n: '1', text: 'Copy the config below' },
+          { n: '2', text: 'Open your IDE\'s MCP config file and paste it in' },
+          { n: '3', text: 'Restart your IDE — done' },
+        ].map(s => (
+          <div key={s.n} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <span style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'var(--border-2)', color: 'var(--text-2)', fontSize: '0.72rem', fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{s.n}</span>
+            <span style={{ fontSize: '0.85rem', color: 'var(--text-2)' }}>{s.text}</span>
+          </div>
         ))}
       </div>
 
       {/* Config block */}
-      <div style={{ position: 'relative', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '8px', overflow: 'hidden' }}>
+      <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '8px', overflow: 'hidden' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px 14px', borderBottom: '1px solid var(--border)' }}>
-          <span style={{ fontSize: '0.72rem', color: 'var(--text-3)', fontFamily: 'monospace' }}>
-            Add to {selected.file}
-          </span>
-          <button
-            onClick={copy}
-            style={{ fontSize: '0.72rem', color: copied ? 'var(--green)' : 'var(--text-2)', background: 'none', border: 'none', cursor: 'pointer', padding: '2px 8px' }}
-          >
+          <span style={{ fontSize: '0.72rem', color: 'var(--text-3)', fontFamily: 'monospace' }}>mcp_config.json</span>
+          <button onClick={copy} style={{ fontSize: '0.75rem', color: copied ? 'var(--green)' : 'var(--text-2)', background: 'none', border: 'none', cursor: 'pointer', padding: '2px 8px', fontWeight: copied ? 600 : 400 }}>
             {copied ? '✓ Copied' : 'Copy'}
           </button>
         </div>
-        <pre style={{ margin: 0, padding: '16px', fontSize: '0.78rem', lineHeight: 1.6, overflowX: 'auto', color: 'var(--text-1)' }}>
-          {selected.config}
+        <pre style={{ margin: 0, padding: '16px', fontSize: '0.8rem', lineHeight: 1.7, overflowX: 'auto', color: 'var(--text)' }}>
+          {MCP_CONFIG}
         </pre>
       </div>
-
-      <p style={{ fontSize: '0.75rem', color: 'var(--text-3)', marginTop: '10px' }}>
-        Paste into the config file above, then restart your IDE. Your agents will have live access to Primer context.
-      </p>
     </div>
   )
 }
+
 
 export default function DashboardClient({ user, isPro, projects }: Props) {
   const router = useRouter()

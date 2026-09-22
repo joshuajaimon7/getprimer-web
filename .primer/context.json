@@ -14,6 +14,28 @@
   ],
   "decisions": [
     {
+      "id": "771606b6",
+      "text": "Redirect to dashboard if already logged in on /login",
+      "raw": "fix: redirect to dashboard if already logged in on /login",
+      "date": "2026-09-22T06:46:15.000Z",
+      "files": [
+        "._.cursorrules",
+        "._.goosehints",
+        "._.windsurfrules",
+        "._GEMINI.md",
+        ".cursorrules",
+        ".goosehints",
+        ".primer/._context.json",
+        ".primer/context.json",
+        ".windsurfrules",
+        "GEMINI.md",
+        "src/app/login/._login-client.tsx",
+        "src/app/login/login-client.tsx",
+        "src/app/login/page.tsx"
+      ],
+      "manual": false
+    },
+    {
       "id": "0f37fca0",
       "text": "Remove GitHub links from landing page (hero, nav, footer)",
       "raw": "fix: remove GitHub links from landing page (hero, nav, footer)",
@@ -323,7 +345,7 @@
     {
       "path": "src/app/dashboard/dashboard-client.tsx",
       "touches": 5,
-      "lastSaved": "2026-09-22T06:42:24.710Z"
+      "lastSaved": "2026-09-22T06:48:50.710Z"
     },
     {
       "path": "src/app/api/sync/route.ts",
@@ -331,9 +353,14 @@
       "lastSaved": "2026-09-21T18:07:11.730Z"
     },
     {
+      "path": "src/app/login/page.tsx",
+      "touches": 3,
+      "lastSaved": "2026-09-22T06:45:34.610Z"
+    },
+    {
       "path": "src/app/globals.css",
       "touches": 3,
-      "lastSaved": "2026-09-21T15:48:28.010Z"
+      "lastSaved": "2026-09-22T06:48:18.350Z"
     },
     {
       "path": "src/app/layout.tsx",
@@ -351,39 +378,39 @@
       "lastSaved": "2026-09-21T14:25:50.650Z"
     },
     {
+      "path": ".cursorrules",
+      "touches": 2,
+      "lastSaved": "2026-09-22T06:48:53.460Z"
+    },
+    {
+      "path": ".goosehints",
+      "touches": 2,
+      "lastSaved": "2026-09-22T06:48:53.480Z"
+    },
+    {
+      "path": ".primer/context.json",
+      "touches": 2,
+      "lastSaved": "2026-09-22T06:48:53.450Z"
+    },
+    {
+      "path": ".windsurfrules",
+      "touches": 2,
+      "lastSaved": "2026-09-22T06:48:53.460Z"
+    },
+    {
+      "path": "GEMINI.md",
+      "touches": 2,
+      "lastSaved": "2026-09-22T06:48:21.180Z"
+    },
+    {
       "path": "src/app/auth/callback/route.ts",
       "touches": 2,
       "lastSaved": "2026-09-21T15:42:55.130Z"
     },
     {
-      "path": "src/app/login/page.tsx",
-      "touches": 2,
-      "lastSaved": "2026-09-22T06:45:34.610Z"
-    },
-    {
       "path": ".gitignore",
       "touches": 2,
       "lastSaved": "2026-09-21T14:06:19.510Z"
-    },
-    {
-      "path": ".cursorrules",
-      "touches": 1,
-      "lastSaved": "2026-09-22T06:45:56.540Z"
-    },
-    {
-      "path": ".goosehints",
-      "touches": 1,
-      "lastSaved": "2026-09-22T06:45:56.580Z"
-    },
-    {
-      "path": ".primer/context.json",
-      "touches": 1,
-      "lastSaved": "2026-09-22T06:45:56.520Z"
-    },
-    {
-      "path": ".windsurfrules",
-      "touches": 1,
-      "lastSaved": "2026-09-22T06:45:56.560Z"
     }
   ],
   "architecture": [
@@ -398,7 +425,7 @@
     "hasDocs": false,
     "pendingTodos": []
   },
-  "builtAt": "2026-09-22T06:45:56.586Z",
-  "builtAtGitHead": "0f37fca0f466f39c97c56de7fb6c3f156ebe3e64",
+  "builtAt": "2026-09-22T06:48:53.521Z",
+  "builtAtGitHead": "771606b6ff84f55401f1f9c17054b6ccb2454941",
   "primerVersion": "3.0.0"
 }
