@@ -7,20 +7,20 @@ const TOOLS = ['Cursor', 'Claude Code', 'Windsurf', 'Aider', 'Goose', 'OpenCode'
 const STEPS = [
   {
     num: '01',
-    title: 'Install once per machine',
-    desc: 'One global install. A background daemon starts on login — auto-discovers every git project you cd into.',
+    title: 'Install once',
+    desc: 'One command. That\'s it. Primer quietly runs in the background — nothing to configure, nothing to maintain.',
     code: 'npm install -g getprimer\nprimer setup',
   },
   {
     num: '02',
-    title: 'cd into any project',
-    desc: 'The daemon detects the repo, reads commit history, and writes context files instantly. No per-project config. Ever.',
-    code: 'cd my-project\n# AGENTS.md written automatically\n# .cursorrules, .windsurfrules too',
+    title: 'Primer figures out the rest',
+    desc: 'Open any project and Primer already knows what it is. Your stack, your recent decisions, what\'s in progress. No input from you.',
+    code: '# AGENTS.md written automatically\n# .cursorrules, .windsurfrules too\n# No commands needed',
   },
   {
     num: '03',
-    title: 'Every agent knows',
-    desc: 'Cursor, Claude Code, Windsurf, Aider, Goose — each reads its native file. Zero configuration across tools.',
+    title: 'Every agent just knows',
+    desc: 'Cursor, Claude Code, Windsurf, Aider, Goose — whichever tool you open, it already has full context before you type a word.',
     code: '# Cursor   → .cursorrules\n# Claude    → AGENTS.md\n# Windsurf  → .windsurfrules\n# Aider     → .aider.conf.yml',
   },
 ]
@@ -51,7 +51,7 @@ export default function Home() {
       <section className="hero">
         <div className="hero-tag">
           <span className="hero-tag-dot" />
-          v3.0.3 — now on npm
+          v3.0.8 — now on npm
         </div>
         <h1 className="hero-h1">Your context<br />lives with you.</h1>
         <p className="hero-sub">
@@ -89,25 +89,24 @@ export default function Home() {
         <h2 className="section-title">Every agent reads this<br />before your first message.</h2>
         <div className="context-preview">
           <div className="context-header">
-            <span className="context-filename">AGENTS.md — creedn</span>
+            <span className="context-filename">AGENTS.md — my-saas-app</span>
           </div>
           <div className="context-body">
-            <div className="h1"># Project: creedn</div>
-            <div className="muted">{'>'} Auto-maintained by Primer v3.0.3. Last updated: 2m ago. Do not edit manually.</div>
+            <div className="h1"># Project: my-saas-app</div>
+            <div className="muted">{'>'} Auto-maintained by Primer v3.0.8. Last updated: 2m ago. Do not edit manually.</div>
             <br/>
             <div className="section-head">## Stack</div>
-            <div>Next.js 16 · TypeScript · Supabase · Stripe · Framer Motion</div>
+            <div>Next.js · TypeScript · Supabase · Stripe · Tailwind</div>
             <br/>
             <div className="section-head">## Recent decisions & context</div>
-            <div>- ⚙️ Moved Stripe to server-side — client was exposing secret key <span className="muted">*(2026-09-21)*</span></div>
-            <div className="why">{'  >'} Why: Frontend code was reading STRIPE_SECRET_KEY directly in useEffect.</div>
-            <div>- ⚙️ Switched to Vercel from Cloudflare Pages — bundle size limit exceeded <span className="muted">*(2026-09-19)*</span></div>
-            <div>- 📝 Auth in middleware — no per-route session checks needed <span className="muted">*(2026-09-18)*</span></div>
+            <div>- ⚙️ Moved payments to server-side — client was exposing secret key <span className="muted">*(2026-09-21)*</span></div>
+            <div>- ⚙️ Switched auth to middleware — no per-route checks needed <span className="muted">*(2026-09-19)*</span></div>
+            <div>- 📝 Postgres over SQLite — needed concurrent writes for team features <span className="muted">*(2026-09-18)*</span></div>
             <br/>
             <div className="section-head">## Active files (last 7 days)</div>
-            <div>- `src/app/dashboard/deals/page.tsx` — last saved 2h ago, 8 edits</div>
-            <div>- `src/app/api/stripe/webhook/route.ts` — 5 edits</div>
-            <div>- `src/components/landing/hero-section.tsx` — 4 edits</div>
+            <div>- `src/app/dashboard/page.tsx` — last saved 2h ago, 8 edits</div>
+            <div>- `src/app/api/payments/webhook/route.ts` — 5 edits</div>
+            <div>- `src/components/ui/button.tsx` — 4 edits</div>
           </div>
         </div>
       </section>
@@ -138,10 +137,10 @@ export default function Home() {
             <div className="plan-price">$0</div>
             <div className="plan-desc">Always free. No account needed.</div>
             <ul className="plan-features">
-              <li>Local daemon — unlimited projects</li>
+              <li>Runs locally — unlimited projects</li>
               <li>All IDE context files generated</li>
               <li>Git decision extraction</li>
-              <li>Auto-detection on cd</li>
+              <li>Automatic project detection</li>
               <li>Works fully offline</li>
             </ul>
             {showInstall ? (
@@ -171,9 +170,9 @@ export default function Home() {
             <ul className="plan-features">
               <li>Everything in Free</li>
               <li>Cloud sync — context across machines</li>
-              <li>LLM extraction (WHY, not just WHAT)</li>
+              <li>Pull context on any new machine instantly</li>
               <li>Dashboard at getprimer.cloud</li>
-              <li>primer upgrade to link any machine</li>
+              <li>Link unlimited machines</li>
             </ul>
             <Link href="/upgrade" className="plan-cta primary">Get Pro</Link>
           </div>
