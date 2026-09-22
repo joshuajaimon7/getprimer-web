@@ -1,0 +1,366 @@
+{
+  "project": "getprimer-web",
+  "gitRemote": "https://github.com/joshuajaimon7/getprimer-web.git",
+  "gitRootPath": "/Volumes/Extreme SSD 1/getprimer-web",
+  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+  "stack": [
+    "TypeScript",
+    "Supabase SSR",
+    "Supabase",
+    "Next.js 16",
+    "React",
+    "React DOM",
+    "Stripe"
+  ],
+  "decisions": [
+    {
+      "id": "f6734260",
+      "text": "Add MCP server as Pro feature on landing page",
+      "raw": "feat: add MCP server as Pro feature on landing page",
+      "date": "2026-09-22T06:27:58.000Z",
+      "files": [
+        "src/app/page.tsx"
+      ],
+      "manual": false
+    },
+    {
+      "id": "5278048c",
+      "text": "Landing page audit — remove creedn ref, update version, non-technical copy",
+      "raw": "fix: landing page audit — remove creedn ref, update version, non-technical copy",
+      "date": "2026-09-22T06:07:52.000Z",
+      "files": [
+        "src/app/page.tsx"
+      ],
+      "manual": false
+    },
+    {
+      "id": "2ecb4e8a",
+      "text": "Add pull API + store compiled_md in sync for cross-machine context",
+      "raw": "feat: add pull API + store compiled_md in sync for cross-machine context",
+      "date": "2026-09-21T18:07:28.000Z",
+      "files": [
+        "src/app/api/pull/route.ts",
+        "src/app/api/sync/route.ts"
+      ],
+      "manual": false
+    },
+    {
+      "id": "ce4ac213",
+      "text": "No-git project sync + localId fallback key",
+      "raw": "feat: no-git project sync + localId fallback key",
+      "date": "2026-09-21T16:43:16.000Z",
+      "files": [
+        "src/app/api/sync/route.ts"
+      ],
+      "manual": false
+    },
+    {
+      "id": "1603ffcd",
+      "text": "Realtime dashboard + fix project rename bug",
+      "raw": "feat: realtime dashboard + fix project rename bug",
+      "date": "2026-09-21T16:35:56.000Z",
+      "files": [
+        "src/app/api/sync/route.ts",
+        "src/app/dashboard/dashboard-client.tsx"
+      ],
+      "manual": false
+    },
+    {
+      "id": "87780b86",
+      "text": "Project detail page + clickable cards + fix /api/sync build error",
+      "raw": "feat: project detail page + clickable cards + fix /api/sync build error",
+      "date": "2026-09-21T16:23:41.000Z",
+      "files": [
+        "src/app/api/sync/route.ts",
+        "src/app/dashboard/._project",
+        "src/app/dashboard/dashboard-client.tsx",
+        "src/app/dashboard/project/._[id]",
+        "src/app/dashboard/project/[id]/._page.tsx",
+        "src/app/dashboard/project/[id]/page.tsx"
+      ],
+      "manual": false
+    },
+    {
+      "id": "652166de",
+      "text": "/api/sync route — CLI token auth, service role writes",
+      "raw": "feat: /api/sync route — CLI token auth, service role writes",
+      "date": "2026-09-21T16:03:04.000Z",
+      "files": [
+        "src/app/api/._sync",
+        "src/app/api/sync/._route.ts",
+        "src/app/api/sync/route.ts"
+      ],
+      "manual": false
+    },
+    {
+      "id": "86afc71c",
+      "text": "Dashboard upgrade button → /upgrade (was buy.stripe.com/placeholder)",
+      "raw": "fix: dashboard upgrade button → /upgrade (was buy.stripe.com/placeholder)",
+      "date": "2026-09-21T15:53:29.000Z",
+      "files": [
+        "src/app/dashboard/dashboard-client.tsx"
+      ],
+      "manual": false
+    },
+    {
+      "id": "811cb40a",
+      "text": "Design: premium minimal redesign",
+      "raw": "design: premium minimal redesign",
+      "date": "2026-09-21T15:49:45.000Z",
+      "files": [
+        "src/app/globals.css",
+        "src/app/page.tsx"
+      ],
+      "manual": false
+    },
+    {
+      "id": "c80960c8",
+      "text": "Auth callback uses NEXT_PUBLIC_APP_URL, handles next param",
+      "raw": "fix: auth callback uses NEXT_PUBLIC_APP_URL, handles next param",
+      "date": "2026-09-21T15:43:04.000Z",
+      "files": [
+        "src/app/auth/callback/route.ts"
+      ],
+      "manual": false
+    },
+    {
+      "id": "45e10955",
+      "text": "GitHub-only login, primer. favicon + og:image",
+      "raw": "feat: GitHub-only login, primer. favicon + og:image",
+      "date": "2026-09-21T15:18:46.000Z",
+      "files": [
+        "public/._favicon.svg",
+        "public/._logo.svg",
+        "public/favicon.svg",
+        "public/logo.svg",
+        "src/app/layout.tsx",
+        "src/app/login/page.tsx"
+      ],
+      "manual": false
+    },
+    {
+      "id": "a7c53e3d",
+      "text": "Update landing — setup once clarity, accurate tool list, better step descriptions",
+      "raw": "feat: update landing — setup once clarity, accurate tool list, better step descriptions",
+      "date": "2026-09-21T15:08:34.000Z",
+      "files": [
+        "src/app/page.tsx"
+      ],
+      "manual": false
+    },
+    {
+      "id": "576603fc",
+      "text": "Trigger redeploy",
+      "raw": "chore: trigger redeploy",
+      "date": "2026-09-21T15:02:01.000Z",
+      "files": [],
+      "manual": false
+    },
+    {
+      "id": "f338f9ba",
+      "text": "Upgrade flow, Stripe, CLI auth",
+      "raw": "feat: upgrade flow, Stripe, CLI auth",
+      "date": "2026-09-21T14:30:36.000Z",
+      "files": [
+        "package-lock.json",
+        "package.json",
+        "src/app/._api",
+        "src/app/._cli-auth",
+        "src/app/._upgrade",
+        "src/app/api/._cli-auth",
+        "src/app/api/._stripe",
+        "src/app/api/cli-auth/._confirm",
+        "src/app/api/cli-auth/._init",
+        "src/app/api/cli-auth/._poll",
+        "src/app/api/cli-auth/confirm/._route.ts",
+        "src/app/api/cli-auth/confirm/route.ts",
+        "src/app/api/cli-auth/init/._route.ts",
+        "src/app/api/cli-auth/init/route.ts",
+        "src/app/api/cli-auth/poll/._route.ts",
+        "src/app/api/cli-auth/poll/route.ts",
+        "src/app/api/stripe/._checkout",
+        "src/app/api/stripe/._webhook",
+        "src/app/api/stripe/checkout/._route.ts",
+        "src/app/api/stripe/checkout/route.ts",
+        "src/app/api/stripe/webhook/._route.ts",
+        "src/app/api/stripe/webhook/route.ts",
+        "src/app/cli-auth/._page.tsx",
+        "src/app/cli-auth/page.tsx",
+        "src/app/upgrade/._page.tsx",
+        "src/app/upgrade/._success",
+        "src/app/upgrade/page.tsx",
+        "src/app/upgrade/success/._page.tsx",
+        "src/app/upgrade/success/page.tsx"
+      ],
+      "manual": false
+    },
+    {
+      "id": "abcb63ad",
+      "text": "Initial getprimer.cloud landing + auth + dashboard",
+      "raw": "feat: initial getprimer.cloud landing + auth + dashboard",
+      "date": "2026-09-21T14:06:19.000Z",
+      "files": [
+        "._.env.local",
+        ".gitignore",
+        "package-lock.json",
+        "package.json",
+        "src/._lib",
+        "src/app/._auth",
+        "src/app/._dashboard",
+        "src/app/._login",
+        "src/app/auth/._callback",
+        "src/app/auth/callback/._route.ts",
+        "src/app/auth/callback/route.ts",
+        "src/app/dashboard/._dashboard-client.tsx",
+        "src/app/dashboard/._page.tsx",
+        "src/app/dashboard/dashboard-client.tsx",
+        "src/app/dashboard/page.tsx",
+        "src/app/globals.css",
+        "src/app/layout.tsx",
+        "src/app/login/._page.tsx",
+        "src/app/login/page.tsx",
+        "src/app/page.tsx",
+        "src/lib/._supabase",
+        "src/lib/supabase/._client.ts",
+        "src/lib/supabase/._server.ts",
+        "src/lib/supabase/client.ts",
+        "src/lib/supabase/server.ts"
+      ],
+      "manual": false
+    },
+    {
+      "id": "35eeaa43",
+      "text": "Initial commit from Create Next App",
+      "raw": "Initial commit from Create Next App",
+      "date": "2026-09-21T14:02:16.000Z",
+      "files": [
+        "._.git",
+        "._.gitignore",
+        "._.next",
+        "._AGENTS.md",
+        "._CLAUDE.md",
+        "._README.md",
+        "._next-env.d.ts",
+        "._next.config.ts",
+        "._node_modules",
+        "._package-lock.json",
+        "._package.json",
+        "._public",
+        "._src",
+        "._tsconfig.json",
+        ".gitignore",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "README.md",
+        "next.config.ts",
+        "package-lock.json",
+        "package.json",
+        "public/._file.svg",
+        "public/._globe.svg",
+        "public/._next.svg",
+        "public/._vercel.svg",
+        "public/._window.svg",
+        "public/file.svg",
+        "public/globe.svg",
+        "public/next.svg",
+        "public/vercel.svg",
+        "public/window.svg",
+        "src/._app",
+        "src/app/._favicon.ico",
+        "src/app/._globals.css",
+        "src/app/._layout.tsx",
+        "src/app/._page.module.css",
+        "src/app/._page.tsx",
+        "src/app/favicon.ico",
+        "src/app/globals.css",
+        "src/app/layout.tsx",
+        "src/app/page.module.css",
+        "src/app/page.tsx",
+        "tsconfig.json"
+      ],
+      "manual": false
+    }
+  ],
+  "hotFiles": [
+    {
+      "path": "src/app/page.tsx",
+      "touches": 6,
+      "lastSaved": "2026-09-22T06:27:40.760Z"
+    },
+    {
+      "path": "src/app/api/sync/route.ts",
+      "touches": 5,
+      "lastSaved": "2026-09-21T18:07:11.730Z"
+    },
+    {
+      "path": "src/app/dashboard/dashboard-client.tsx",
+      "touches": 4,
+      "lastSaved": "2026-09-22T06:42:24.710Z"
+    },
+    {
+      "path": "src/app/globals.css",
+      "touches": 3,
+      "lastSaved": "2026-09-21T15:48:28.010Z"
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "touches": 3,
+      "lastSaved": "2026-09-21T15:17:34.410Z"
+    },
+    {
+      "path": "package-lock.json",
+      "touches": 3,
+      "lastSaved": "2026-09-21T14:25:50.660Z"
+    },
+    {
+      "path": "package.json",
+      "touches": 3,
+      "lastSaved": "2026-09-21T14:25:50.650Z"
+    },
+    {
+      "path": "src/app/auth/callback/route.ts",
+      "touches": 2,
+      "lastSaved": "2026-09-21T15:42:55.130Z"
+    },
+    {
+      "path": "src/app/login/page.tsx",
+      "touches": 2,
+      "lastSaved": "2026-09-21T15:18:04.250Z"
+    },
+    {
+      "path": ".gitignore",
+      "touches": 2,
+      "lastSaved": "2026-09-21T14:06:19.510Z"
+    },
+    {
+      "path": "src/app/api/pull/route.ts",
+      "touches": 1,
+      "lastSaved": "2026-09-21T18:07:23.270Z"
+    },
+    {
+      "path": "src/app/dashboard/project/[id]/page.tsx",
+      "touches": 1,
+      "lastSaved": "2026-09-21T16:18:05.770Z"
+    },
+    {
+      "path": "public/favicon.svg",
+      "touches": 1,
+      "lastSaved": "2026-09-21T15:17:22.280Z"
+    }
+  ],
+  "architecture": [
+    "Next.js App Router"
+  ],
+  "codeAnalysis": {
+    "hasTests": false,
+    "hasAuth": true,
+    "hasDocker": false,
+    "hasCICD": false,
+    "hasEnvExample": false,
+    "hasDocs": false,
+    "pendingTodos": []
+  },
+  "builtAt": "2026-09-22T06:42:27.572Z",
+  "builtAtGitHead": "f67342600754ea9c04933644c8392ef52fefd787",
+  "primerVersion": "3.0.0"
+}
