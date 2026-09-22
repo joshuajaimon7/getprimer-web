@@ -77,7 +77,7 @@ function CliAuthContent() {
         <Link
           href={`/login?redirect=${encodeURIComponent(`/cli-auth?token=${token}`)}`}
           className="auth-submit"
-          style={{display:'block', textAlign:'center', padding:'11px', borderRadius:'8px', fontWeight:600, fontSize:'0.9rem', background:'var(--text)', color:'#000', marginTop:'8px'}}
+          style={{display:'block', textAlign:'center', padding:'11px', borderRadius:'0', fontWeight:600, fontSize:'0.9rem', background:'var(--text)', color:'#000', marginTop:'8px'}}
         >
           Sign in →
         </Link>
@@ -120,20 +120,20 @@ function CliAuthContent() {
 
         <div style={{textAlign:'center', marginBottom:'28px'}}>
           <div style={{
-            width:'48px', height:'48px', borderRadius:'50%',
+            width:'48px', height:'48px', borderRadius:'0',
             background:'var(--bg-3)', border:'1px solid var(--border)',
             display:'flex', alignItems:'center', justifyContent:'center',
             margin:'0 auto 16px', fontSize:'1.25rem'
           }}>💻</div>
           <div className="auth-title" style={{fontSize:'1.25rem'}}>Link this machine?</div>
           <p className="auth-subtitle" style={{marginBottom:0}}>
-            A terminal running <code style={{fontFamily:'JetBrains Mono, monospace', fontSize:'0.8rem', background:'var(--bg-3)', padding:'2px 6px', borderRadius:'4px'}}>primer login</code> wants to link to your account.
+            A terminal running <code style={{fontFamily:'JetBrains Mono, monospace', fontSize:'0.8rem', background:'var(--bg-3)', padding:'2px 6px', borderRadius:'0'}}>primer login</code> wants to link to your account.
           </p>
         </div>
 
         <div style={{
           background:'var(--bg-3)', border:'1px solid var(--border)',
-          borderRadius:'8px', padding:'14px 16px', marginBottom:'24px'
+          borderRadius:'0', padding:'14px 16px', marginBottom:'24px'
         }}>
           <div style={{fontSize:'0.75rem', color:'var(--text-3)', marginBottom:'4px'}}>Signing in as</div>
           <div style={{fontSize:'0.875rem', fontWeight:500}}>{user.email}</div>
@@ -147,7 +147,7 @@ function CliAuthContent() {
           <button
             onClick={() => setDenied(true)}
             style={{
-              flex:1, padding:'10px', borderRadius:'8px', fontSize:'0.875rem',
+              flex:1, padding:'10px', borderRadius:'0', fontSize:'0.875rem',
               fontWeight:500, background:'var(--accent-dim)', color:'var(--text)',
               border:'1px solid var(--border)', cursor:'pointer'
             }}
@@ -158,7 +158,7 @@ function CliAuthContent() {
             onClick={confirm}
             disabled={confirming}
             style={{
-              flex:2, padding:'10px', borderRadius:'8px', fontSize:'0.875rem',
+              flex:2, padding:'10px', borderRadius:'0', fontSize:'0.875rem',
               fontWeight:600, background:'var(--text)', color:'#000',
               border:'none', cursor:confirming ? 'not-allowed' : 'pointer',
               opacity: confirming ? 0.7 : 1

@@ -34,7 +34,7 @@ function LoginForm() {
           style={{
             width: '100%',
             padding: '12px 16px',
-            borderRadius: '8px',
+            borderRadius: '0',
             fontWeight: 600,
             fontSize: '0.95rem',
             background: 'var(--text)',

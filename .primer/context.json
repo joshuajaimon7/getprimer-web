@@ -14,6 +14,23 @@
   ],
   "decisions": [
     {
+      "id": "4f683843",
+      "text": "Encode redirect URL in cli-auth so token survives GitHub OAuth login",
+      "raw": "fix: encode redirect URL in cli-auth so token survives GitHub OAuth login",
+      "date": "2026-09-22T07:19:46.000Z",
+      "files": [
+        "._.cursorrules",
+        ".cursorrules",
+        ".goosehints",
+        ".primer/._context.json",
+        ".primer/context.json",
+        ".windsurfrules",
+        "GEMINI.md",
+        "src/app/cli-auth/page.tsx"
+      ],
+      "manual": false
+    },
+    {
       "id": "ffcab901",
       "text": "Cli-auth confirm — better errors, auto-redirect to dashboard after link",
       "raw": "fix: cli-auth confirm — better errors, auto-redirect to dashboard after link",
@@ -382,39 +399,44 @@
       "lastSaved": "2026-09-22T06:48:50.710Z"
     },
     {
+      "path": ".cursorrules",
+      "touches": 5,
+      "lastSaved": "2026-09-22T18:19:13.130Z"
+    },
+    {
+      "path": ".goosehints",
+      "touches": 5,
+      "lastSaved": "2026-09-22T18:19:13.170Z"
+    },
+    {
+      "path": ".primer/context.json",
+      "touches": 5,
+      "lastSaved": "2026-09-22T18:19:13.130Z"
+    },
+    {
+      "path": ".windsurfrules",
+      "touches": 5,
+      "lastSaved": "2026-09-22T18:19:13.150Z"
+    },
+    {
+      "path": "GEMINI.md",
+      "touches": 5,
+      "lastSaved": "2026-09-22T18:19:13.190Z"
+    },
+    {
       "path": "src/app/api/sync/route.ts",
       "touches": 5,
       "lastSaved": "2026-09-21T18:07:11.730Z"
     },
     {
-      "path": ".cursorrules",
-      "touches": 4,
-      "lastSaved": "2026-09-22T07:04:23.850Z"
-    },
-    {
-      "path": ".goosehints",
-      "touches": 4,
-      "lastSaved": "2026-09-22T07:04:23.860Z"
-    },
-    {
-      "path": ".primer/context.json",
-      "touches": 4,
-      "lastSaved": "2026-09-22T07:04:23.840Z"
-    },
-    {
-      "path": ".windsurfrules",
-      "touches": 4,
-      "lastSaved": "2026-09-22T07:04:23.850Z"
-    },
-    {
-      "path": "GEMINI.md",
-      "touches": 4,
-      "lastSaved": "2026-09-22T07:04:23.860Z"
-    },
-    {
       "path": "src/app/globals.css",
       "touches": 4,
       "lastSaved": "2026-09-22T06:48:18.350Z"
+    },
+    {
+      "path": "src/app/cli-auth/page.tsx",
+      "touches": 3,
+      "lastSaved": "2026-09-22T18:19:25.460Z"
     },
     {
       "path": "src/app/login/page.tsx",
@@ -437,11 +459,6 @@
       "lastSaved": "2026-09-21T14:25:50.650Z"
     },
     {
-      "path": "src/app/cli-auth/page.tsx",
-      "touches": 2,
-      "lastSaved": "2026-09-22T07:19:34.800Z"
-    },
-    {
       "path": "src/app/auth/callback/route.ts",
       "touches": 2,
       "lastSaved": "2026-09-21T15:42:55.130Z"
@@ -459,7 +476,7 @@
     "hasDocs": false,
     "pendingTodos": []
   },
-  "builtAt": "2026-09-22T07:19:37.641Z",
-  "builtAtGitHead": "ffcab901745cfebded415c054f39a80564f44256",
+  "builtAt": "2026-09-22T18:19:28.180Z",
+  "builtAtGitHead": "4f683843521d5b7e195fd1440c0f1de16fedf62c",
   "primerVersion": "3.0.0"
 }
