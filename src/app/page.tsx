@@ -171,8 +171,8 @@ export default function Home() {
               <li>Everything in Free</li>
               <li>Cloud sync — context across machines</li>
               <li>Pull context on any new machine instantly</li>
+              <li>MCP server — agents query context live</li>
               <li>Dashboard at getprimer.cloud</li>
-              <li>Link unlimited machines</li>
             </ul>
             <Link href="/upgrade" className="plan-cta primary">Get Pro</Link>
           </div>
