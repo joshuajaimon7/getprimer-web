@@ -14,6 +14,24 @@
   ],
   "decisions": [
     {
+      "id": "a9d32bfb",
+      "text": "Sharp UI across all pages — remove borderRadius, add MCP to Pro features, fix success page command",
+      "raw": "fix: sharp UI across all pages — remove borderRadius, add MCP to Pro features, fix success page command",
+      "date": "2026-09-22T18:19:36.000Z",
+      "files": [
+        ".cursorrules",
+        ".goosehints",
+        ".primer/context.json",
+        ".windsurfrules",
+        "GEMINI.md",
+        "src/app/cli-auth/page.tsx",
+        "src/app/login/login-client.tsx",
+        "src/app/upgrade/page.tsx",
+        "src/app/upgrade/success/page.tsx"
+      ],
+      "manual": false
+    },
+    {
       "id": "4f683843",
       "text": "Encode redirect URL in cli-auth so token survives GitHub OAuth login",
       "raw": "fix: encode redirect URL in cli-auth so token survives GitHub OAuth login",
@@ -394,34 +412,34 @@
       "lastSaved": "2026-09-22T06:43:52.550Z"
     },
     {
-      "path": "src/app/dashboard/dashboard-client.tsx",
-      "touches": 6,
-      "lastSaved": "2026-09-22T06:48:50.710Z"
-    },
-    {
       "path": ".cursorrules",
-      "touches": 5,
-      "lastSaved": "2026-09-22T18:19:13.130Z"
+      "touches": 6,
+      "lastSaved": "2026-09-22T18:22:19.250Z"
     },
     {
       "path": ".goosehints",
-      "touches": 5,
-      "lastSaved": "2026-09-22T18:19:13.170Z"
+      "touches": 6,
+      "lastSaved": "2026-09-22T18:22:19.260Z"
     },
     {
       "path": ".primer/context.json",
-      "touches": 5,
-      "lastSaved": "2026-09-22T18:19:13.130Z"
+      "touches": 6,
+      "lastSaved": "2026-09-22T18:22:19.240Z"
     },
     {
       "path": ".windsurfrules",
-      "touches": 5,
-      "lastSaved": "2026-09-22T18:19:13.150Z"
+      "touches": 6,
+      "lastSaved": "2026-09-22T18:22:19.250Z"
     },
     {
       "path": "GEMINI.md",
-      "touches": 5,
-      "lastSaved": "2026-09-22T18:19:13.190Z"
+      "touches": 6,
+      "lastSaved": "2026-09-22T18:22:19.260Z"
+    },
+    {
+      "path": "src/app/dashboard/dashboard-client.tsx",
+      "touches": 6,
+      "lastSaved": "2026-09-22T18:22:45.060Z"
     },
     {
       "path": "src/app/api/sync/route.ts",
@@ -429,14 +447,14 @@
       "lastSaved": "2026-09-21T18:07:11.730Z"
     },
     {
+      "path": "src/app/cli-auth/page.tsx",
+      "touches": 4,
+      "lastSaved": "2026-09-22T18:19:25.460Z"
+    },
+    {
       "path": "src/app/globals.css",
       "touches": 4,
       "lastSaved": "2026-09-22T06:48:18.350Z"
-    },
-    {
-      "path": "src/app/cli-auth/page.tsx",
-      "touches": 3,
-      "lastSaved": "2026-09-22T18:19:25.460Z"
     },
     {
       "path": "src/app/login/page.tsx",
@@ -459,9 +477,9 @@
       "lastSaved": "2026-09-21T14:25:50.650Z"
     },
     {
-      "path": "src/app/auth/callback/route.ts",
+      "path": "src/app/login/login-client.tsx",
       "touches": 2,
-      "lastSaved": "2026-09-21T15:42:55.130Z"
+      "lastSaved": "2026-09-22T18:19:25.470Z"
     }
   ],
   "architecture": [
@@ -476,7 +494,7 @@
     "hasDocs": false,
     "pendingTodos": []
   },
-  "builtAt": "2026-09-22T18:19:28.180Z",
-  "builtAtGitHead": "4f683843521d5b7e195fd1440c0f1de16fedf62c",
+  "builtAt": "2026-09-22T18:22:47.777Z",
+  "builtAtGitHead": "a9d32bfb1c07e76290918acb77495787631779ad",
   "primerVersion": "3.0.0"
 }

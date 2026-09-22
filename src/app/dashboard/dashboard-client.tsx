@@ -87,6 +87,13 @@ export default function DashboardClient({ user, isPro, projects }: Props) {
     router.push('/')
   }
 
+  async function manageSubscription() {
+    const res = await fetch('/api/stripe/portal', { method: 'POST' })
+    const data = await res.json()
+    if (data.url) window.location.href = data.url
+    else alert('Could not open billing portal. Try again.')
+  }
+
   useEffect(() => {
     const supabase = createClient()
     const channel = supabase
@@ -126,6 +133,9 @@ export default function DashboardClient({ user, isPro, projects }: Props) {
         </div>
         <div className="dash-user">
           <span>{user.email}</span>
+          {isPro && (
+            <button className="dash-signout" onClick={manageSubscription}>Manage plan</button>
+          )}
           <button className="dash-signout" onClick={signOut}>Sign out</button>
         </div>
       </div>

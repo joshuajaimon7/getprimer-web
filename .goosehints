@@ -11,6 +11,7 @@ TypeScript · Supabase SSR · Supabase · Next.js 16 · React · React DOM · St
 - Next.js App Router
 
 ## Recent decisions & context
+- ⚙️ Sharp UI across all pages — remove borderRadius, add MCP to Pro features, fix success page command *(2026-09-22)*
 - ⚙️ Encode redirect URL in cli-auth so token survives GitHub OAuth login *(2026-09-22)*
 - ⚙️ Cli-auth confirm — better errors, auto-redirect to dashboard after link *(2026-09-22)*
 - ⚙️ Brighten text colors, simplify MCP section with 3-step walkthrough *(2026-09-22)*
@@ -20,7 +21,6 @@ TypeScript · Supabase SSR · Supabase · Next.js 16 · React · React DOM · St
 - ⚙️ Add MCP server as Pro feature on landing page *(2026-09-22)*
 - ⚙️ Landing page audit — remove creedn ref, update version, non-technical copy *(2026-09-22)*
 - ⚙️ Add pull API + store compiled_md in sync for cross-machine context *(2026-09-21)*
-- ⚙️ No-git project sync + localId fallback key *(2026-09-21)*
 
 ## Project health
 - Tests: ❌ none found
@@ -29,15 +29,15 @@ TypeScript · Supabase SSR · Supabase · Next.js 16 · React · React DOM · St
 
 ## Active files (last 7 days)
 - `src/app/page.tsx` — last saved 11h ago, 7 edits
-- `src/app/dashboard/dashboard-client.tsx` — last saved 11h ago, 6 edits
-- `.cursorrules` — last saved just now, 5 edits
-- `.goosehints` — last saved just now, 5 edits
-- `.primer/context.json` — last saved just now, 5 edits
-- `.windsurfrules` — last saved just now, 5 edits
-- `GEMINI.md` — last saved just now, 5 edits
+- `.cursorrules` — last saved just now, 6 edits
+- `.goosehints` — last saved just now, 6 edits
+- `.primer/context.json` — last saved just now, 6 edits
+- `.windsurfrules` — last saved just now, 6 edits
+- `GEMINI.md` — last saved just now, 6 edits
+- `src/app/dashboard/dashboard-client.tsx` — last saved just now, 6 edits
 - `src/app/api/sync/route.ts` — last saved yesterday, 5 edits
+- `src/app/cli-auth/page.tsx` — last saved 3m ago, 4 edits
 - `src/app/globals.css` — last saved 11h ago, 4 edits
-- `src/app/cli-auth/page.tsx` — last saved just now, 3 edits
 
 ## Repository
 https://github.com/joshuajaimon7/getprimer-web.git
